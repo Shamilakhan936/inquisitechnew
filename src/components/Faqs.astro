@@ -1,0 +1,45 @@
+---
+const faqs = [
+  {
+    question: "Premium Access & Priority Support",
+    answer: "Enjoy unlimited access to all premium features with 24/7 priority customer support. Our dedicated team ensures your experience is seamless and any issues are resolved within hours, not days.",
+  },
+  {
+    question: "Do I need Power BI pro or premium license?",
+    answer: "A Power BI Pro license is typically required to share content with others and collaborate. Premium is ideal for large-scale deployments.",
+  },
+  {
+    question: "Exclusive Member Events & Networking",
+    answer: "Yes, we host regular member-only events, workshops, and networking sessions to build strong community engagement.",
+  },
+  {
+    question: "Advanced Analytics & Insights",
+    answer: "We provide tailored insights using AI-driven dashboards and predictive analytics tools.",
+  },
+  {
+    question: "Dedicated Account Management",
+    answer: "Each client is assigned a dedicated account manager to ensure smooth communication and support.",
+  },
+];
+---
+
+<section class="py-16 px-4 max-w-3xl mx-auto">
+  <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">FAQs</h2>
+  <p class="text-center text-gray-500 mb-10">Find Answers To Commonly Raised Questions By Users.</p>
+
+  <div class="space-y-4">
+  {faqs.map((faq) => (
+  <details class="group rounded border border-gray-300 p-5 transition-all open:bg-gray-50 open:border-gray-400">
+    <summary class="flex justify-between items-center cursor-pointer text-gray-800 font-medium list-none">
+      {faq.question}
+      <span class="transition-transform duration-300 group-open:rotate-180">
+        <img src="/src/assets/Images/dropdownButton.png" alt="Toggle" class="h-4 w-4" />
+      </span>
+    </summary>
+    <p class="mt-3 text-gray-500 leading-relaxed">{faq.answer}</p>
+  </details>
+))}
+
+</div>
+
+</section>
