@@ -2,32 +2,36 @@
 const backgroundImage = "/src/assets/Images/hero-bg.png";
 ---
 
-<section 
-  class="relative w-full h-[500px] bg-cover bg-center flex items-center"
-  style={`background-image: url(${backgroundImage});`}
+<section
+    class="relative w-full h-[580px] bg-cover bg-center flex items-center"
+    style={`background-image: url(${backgroundImage});`}
 >
-  <div class="absolute inset-0 bg-black/50"></div> 
+    <div class="absolute inset-0 bg-black/50"></div>
+    <div class="w-full max-w-[1400px] mx-auto">
+    <div class="relative z-10 max-w-4xl px-6 md:px-12">
+        <h1 class="text-[40px] md:text-5xl font-bold text-white leading-tight">
+            Transform Your Business <br />
+            With <span class="text-orange-400">Intelligent</span> Data
+        </h1>
+        <p class="mt-4 text-gray-200 max-w-2xl text-[18px]">
+            Unlock The Power Of Your Data With Our Comprehensive Business
+            Intelligence Solutions. From Data Warehousing To Advanced Analytics,
+            We Help You Make Smarter Decisions.
+        </p>
 
-  <div class="relative z-10 max-w-4xl px-6 md:px-12">
-    <h1 class="text-3xl md:text-5xl font-bold text-white leading-tight">
-      Transform Your Business <br />
-      With <span class="text-orange-400">Intelligent</span> Data
-    </h1>
-    <p class="mt-4 text-gray-200 max-w-2xl">
-      Unlock The Power Of Your Data With Our Comprehensive Business Intelligence
-      Solutions. From Data Warehousing To Advanced Analytics, We Help You Make
-      Smarter Decisions.
-    </p>
-
-    <div class="mt-6 flex flex-wrap gap-4">
-      <a href="#get-started" 
-         class="bg-orange-400 text-white px-5 py-3 rounded-md font-medium hover:bg-orange-500 transition">
-        Get Started Today
-      </a>
-      <a href="#services" 
-         class="border border-white text-white px-5 py-3 rounded-md font-medium hover:bg-white hover:text-black transition">
-        Our Services
-      </a>
+        <div class="mt-6 flex flex-wrap gap-4">
+            <a
+                href="#get-started"
+                class="bg-[#FF9929] text-white px-5 py-3 rounded-md font-medium hover:bg-orange-500 transition"
+            >
+                Get Started Today
+            </a>
+            <a
+                href="#services"
+                class="border border-white text-white px-5 py-3 rounded-md font-medium hover:bg-white hover:text-black transition"
+            >
+                Our Services
+            </a>
+        </div>
     </div>
-  </div>
 </section>
