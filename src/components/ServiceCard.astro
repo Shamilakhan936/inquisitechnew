@@ -1,19 +1,23 @@
 ---
+import dataIcon from "../assets/Images/data-icon.png";
+import machineIcon from "../assets/Images/machin-icon.png";
+import meetingIcon from "../assets/Images/meeting-icons.png";
+
 const services = [
     {
-        image: "/src/assets/Images/data-icon.png", // replace with your actual image path
+        image: dataIcon,
         title: "Data Analytics",
         description:
             "Advanced statistical analysis and predictive modeling to uncover hidden patterns and forecast future trends.",
     },
     {
-        image: "/src/assets/Images/machin-icon.png",
+        image: machineIcon,
         title: "Machine Learning",
         description:
             "Implement cutting-edge machine learning algorithms to automate decision-making and optimize business processes.",
     },
     {
-        image: "/src/assets/Images/meeting-icons.png",
+        image: meetingIcon,
         title: "Custom Solutions",
         description:
             "Need something specific? We create tailored BI solutions designed to meet your unique business requirements.",
@@ -25,7 +29,9 @@ const services = [
     <div class="max-w-[1400px] mx-auto w-full mb-[120px]">
         <div class="text-center">
             <h2 class="text-[48px] font-bold mb-3">Our Core Services</h2>
-            <p class="text-[#000000] mb-12 max-w-2xl mx-auto text-[18px] font-inter ">
+            <p
+                class="text-[#000000] mb-12 max-w-2xl mx-auto text-[18px] font-inter"
+            >
                 We provide end-to-end business intelligence solutions to help
                 you harness the full potential of your data.
             </p>
@@ -36,12 +42,15 @@ const services = [
                 services.map((service) => (
                     <div class="rounded-xl px-[38px] py-[44px] shadow-md  bg-[#FAFAFA] text-black transition duration-300 hover:bg-orange-400 hover:text-white hover:shadow-lg group">
                         <img
-                            src={service.image}
+                            src={service.image.src} 
                             alt={service.title}
+                            loading="lazy"
                             class="w-16 h-16 mb-4"
                         />
                         <h3 class="font-bold text-lg mb-2">{service.title}</h3>
-                        <p class="text-sm mb-6 font-inter">{service.description}</p>
+                        <p class="text-sm mb-6 font-inter">
+                            {service.description}
+                        </p>
                         <a
                             href="#"
                             class="font-medium text-orange-400 group-hover:text-white transition-colors duration-300 "
