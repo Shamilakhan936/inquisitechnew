@@ -1,16 +1,15 @@
 ---
 import "../styles/global.css";
+import logo from "../assets/Images/logo.png";
 let isOpen = false;
 ---
 
 <div class="bg-white shadow-md px-[100px] py-[60px]">
-	<nav class= "flex items-center justify-between w-full max-w-[1400px] mx-auto">
+	<nav
+		class="flex items-center justify-between w-full max-w-[1400px] mx-auto"
+	>
 		<div class="flex items-center gap-2">
-			<img
-				src="/src/assets/Images/logo.png"
-				alt="Logo"
-				class="h-[46.54px] w-auto"
-			/>
+			<img src={logo.src} alt="Logo" class="h-[46.54px] w-auto" />
 		</div>
 
 		<ul class="hidden md:flex gap-6 text-sm font-inter">
@@ -37,15 +36,18 @@ let isOpen = false;
 				>
 					<li>
 						<a href="#" class="block px-4 py-2 hover:bg-gray-100"
-							>Service 1</a>
+							>Service 1</a
+						>
 					</li>
 					<li>
 						<a href="#" class="block px-4 py-2 hover:bg-gray-100"
-							>Service 2</a>
+							>Service 2</a
+						>
 					</li>
 					<li>
 						<a href="#" class="block px-4 py-2 hover:bg-gray-100"
-							>Service 3</a>
+							>Service 3</a
+						>
 					</li>
 				</ul>
 			</li>
