@@ -1,7 +1,7 @@
 ---
 import TestimonialControls from "./TestimonialControls.astro";
 
-// ✅ Import images properly
+// ✅ Import images
 import review1 from "../assets/images/review-1.png";
 import review2 from "../assets/images/review-2.png";
 import review3 from "../assets/images/review-3.png";
@@ -22,10 +22,10 @@ const testimonials = [
     stars: 5,
   },
   {
-    name: "Sarah Johnson",
-    role: "CEO, TechCorp Solutions",
+    name: "Emily Davis",
+    role: "COO, Growth Analytics",
     image: review3,
-    text: "The BI Solution Transformed Our Decision-Making Process. We Now Have Real-Time Insights That Have Improved Our Operational Efficiency By 40%.",
+    text: "Their analytics platform gave us the confidence to scale faster. Data-driven decisions have never been this easy.",
     stars: 5,
   },
 ];
@@ -36,12 +36,14 @@ const testimonials = [
   <p class="text-gray-600 mb-10">Trusted By Industry Leaders Worldwide</p>
 
   <div class="relative">
+    <!-- Track -->
     <div id="testimonial-track" class="flex gap-6 overflow-x-auto scroll-smooth scrollbar-hide">
       {testimonials.map(t => (
         <div
           class="bg-white shadow-md border p-6 text-left flex flex-col justify-between shrink-0"
-          style="width: 399.95px; height: 215.97px; border-radius: 20px;"
+          style="width: 400px; height: 216px; border-radius: 20px;"
         >
+          <!-- Header -->
           <div class="flex items-center mb-4">
             <img src={t.image.src} alt={t.name} class="w-12 h-12 rounded-full mr-4" />
             <div>
@@ -60,12 +62,15 @@ const testimonials = [
               ))}
             </div>
           </div>
+
+          <!-- Body -->
           <p class="text-gray-700 text-sm">{t.text}</p>
         </div>
       ))}
     </div>
 
-    <TestimonialControls client:load />
+    <!-- Controls -->
+    <TestimonialControls trackId="testimonial-track" />
   </div>
 </section>
 
