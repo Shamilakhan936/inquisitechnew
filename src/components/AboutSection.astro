@@ -1,0 +1,30 @@
+---
+import bannerImage from "../assets/Images/bi-insights-banner.png";
+---
+
+<section class="relative w-full px-[100px] pt-[60px] overflow-hidden">
+  <!-- Background Image -->
+  <div class="relative w-full h-[580px]">
+    <img
+      src={bannerImage.src}
+      alt="BI Insights Background"
+      class="w-full h-full object-cover"
+    />
+
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/60"></div>
+
+    <!-- Text Content -->
+    <div class="absolute inset-0 flex items-center">
+      <div class="px-6 sm:px-12 md:px-20 lg:px-28 text-white max-w-3xl">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+          About BI Insights
+        </h1>
+        <p class="text-lg sm:text-xl md:text-2xl leading-relaxed">
+          We're a team of data experts passionate about transforming businesses
+          through intelligent analytics and actionable insights.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
