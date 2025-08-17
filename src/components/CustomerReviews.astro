@@ -1,32 +1,37 @@
 ---
 import TestimonialControls from "./TestimonialControls.astro";
 
+// ✅ Import images properly
+import review1 from "../assets/images/review-1.png";
+import review2 from "../assets/images/review-2.png";
+import review3 from "../assets/images/review-3.png";
+
 const testimonials = [
   {
     name: "Sarah Johnson",
     role: "CEO, TechCorp Solutions",
-    image: "/images/sarah1.jpg",
+    image: review1,
     text: "The BI Solution Transformed Our Decision-Making Process. We Now Have Real-Time Insights That Have Improved Our Operational Efficiency By 40%.",
     stars: 5,
   },
   {
     name: "Michael Chen",
     role: "CTO, DataFlow Inc",
-    image: "/images/michael.jpg",
+    image: review2,
     text: "Outstanding Data Warehousing Implementation. The Team’s Expertise And Attention To Detail Exceeded Our Expectations.",
     stars: 5,
   },
   {
     name: "Sarah Johnson",
     role: "CEO, TechCorp Solutions",
-    image: "/images/sarah2.jpg",
+    image: review3,
     text: "The BI Solution Transformed Our Decision-Making Process. We Now Have Real-Time Insights That Have Improved Our Operational Efficiency By 40%.",
     stars: 5,
   },
 ];
 ---
 
-<section class="py-16   max-w-screen-xl mx-auto text-center overflow-hidden">
+<section class="py-16 max-w-screen-xl mx-auto text-center overflow-hidden">
   <h2 class="text-4xl font-extrabold mb-2">What Our Clients Say</h2>
   <p class="text-gray-600 mb-10">Trusted By Industry Leaders Worldwide</p>
 
@@ -38,7 +43,7 @@ const testimonials = [
           style="width: 399.95px; height: 215.97px; border-radius: 20px;"
         >
           <div class="flex items-center mb-4">
-            <img src={t.image} alt={t.name} class="w-12 h-12 rounded-full mr-4" />
+            <img src={t.image.src} alt={t.name} class="w-12 h-12 rounded-full mr-4" />
             <div>
               <p class="font-semibold">{t.name}</p>
               <p class="text-sm text-gray-500">{t.role}</p>
@@ -60,14 +65,14 @@ const testimonials = [
       ))}
     </div>
 
-    <!-- Import and use your controls here -->
     <TestimonialControls client:load />
   </div>
 </section>
+
 <style>
   #testimonial-track {
     -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    scrollbar-width: none;     /* Firefox */
   }
   #testimonial-track::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera */
