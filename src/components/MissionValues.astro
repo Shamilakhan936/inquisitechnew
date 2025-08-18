@@ -1,0 +1,61 @@
+---
+import covid from "../../public/Images/covid.png";
+import favorite from "../../public/Images/favorite.png";
+import vision from "../../public/Images/vision.png";
+
+const items = [
+  {
+    title: "Our Mission",
+    description:
+      "To Empower Organizations With The Data Insights They Need To Make Confident, Strategic Decisions That Drive Sustainable Growth And Competitive Advantage.",
+    bg: "bg-green-50",
+    img: covid,
+  },
+  {
+    title: "Our Vision",
+    description:
+      "To Be The Global Leader In Business Intelligence Consulting, Setting The Standard For Innovation, Quality, And Client Success In The Data Analytics Industry.",
+    bg: "bg-indigo-50",
+    img: vision,
+  },
+  {
+    title: "Our Values",
+    description:
+      "Integrity, Innovation, And Client-Centricity Guide Everything We Do. We Believe In Building Long-Term Partnerships Based On Trust And Measurable Results.",
+    bg: "bg-red-50",
+    img: favorite,
+  },
+];
+---
+
+<section class="pb-16 bg-white">
+  <div class="container-xl px-6 text-center">
+    <!-- Heading -->
+    <h2 class="text-3xl font-extrabold text-gray-900 mb-2">
+      Our Mission & Values
+    </h2>
+    <p class="text-black mb-12 font-[18px]">
+      We're Driven By A Commitment To Excellence And A Passion For Turning Complex Data Into Clear, Actionable Insights.
+    </p>
+
+    <!-- Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-[98px]">
+      {items.map((item) => (
+        <div class="flex flex-col items-center text-center">
+          {/* <!-- Circle with Image --> */}
+          <div class={`flex items-center justify-center p-[43px] rounded-full ${item.bg} mb-4`}>
+            <img src={item.img.src} alt={item.title} class="w-14 h-14 object-contain" />
+          </div>
+
+          {/* <!-- Title --> */}
+          <h3 class="text-[20px] font-semibold text-gray-900 mb-2">{item.title}</h3>
+
+          {/* <!-- Description --> */}
+          <p class="text-gray-600 text-[18px] leading-relaxed">
+            {item.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
