@@ -1,0 +1,33 @@
+---
+const teamImages = [
+  { src: "/Images/card-image.png", alt: "Team member working" },
+  { src: "/Images/card-group.png", alt: "Team meeting" },
+  { src: "/Images/card-talking.png", alt: "Team collaboration" },
+];
+---
+
+<section class="text-center container-xl " style="margin-top: 266px;">
+  <h2 class="text-2xl md:text-3xl font-bold mb-4">
+    A Team That’s Out To <br class="hidden md:block" />
+    <span class="text-black">Disrupt, Not Just Design</span>
+  </h2>
+
+  <p class="text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
+    We’re Not Just Another Design Shop – We’re A Tight-Knit Crew Of Rebels, Makers,
+    And Problem-Solvers Obsessed With Extraordinary Experiences.
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {
+      teamImages.map(({ src, alt }) => (
+        <div class="overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+          <img
+            src={src}
+            alt={alt}
+            class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+      ))
+    }
+  </div>
+</section>
