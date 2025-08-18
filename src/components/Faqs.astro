@@ -26,13 +26,13 @@ const faqs = [
 ---
 
 <section class="py-16 px-4 max-w-3xl mx-auto">
-  <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">FAQs</h2>
-  <p class="text-center text-gray-500 mb-10">Find Answers To Commonly Raised Questions By Users.</p>
+  <h2 class="font-serif text-3xl md:text-4xl font-bold text-center mb-4">FAQs</h2>
+  <p class="font-inter text-center text-gray-500 mb-10">Find Answers To Commonly Raised Questions By Users.</p>
 
   <div class="space-y-4">
   {faqs.map((faq) => (
   <details class="group rounded border border-gray-300 p-5 transition-all open:bg-gray-50 open:border-gray-400">
-    <summary class="flex justify-between items-center cursor-pointer text-gray-800 font-medium list-none">
+    <summary class="font-inter flex justify-between items-center cursor-pointer text-gray-800 font-medium list-none">
       {faq.question}
       <span class="transition-transform duration-300 group-open:rotate-180">
             <img src={dropdownButton.src} alt="Toggle" class="h-4 w-4" />
