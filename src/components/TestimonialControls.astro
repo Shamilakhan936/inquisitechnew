@@ -1,9 +1,10 @@
 ---
-// Accept trackId as a prop
+// Props
 const { trackId = "testimonial-track" } = Astro.props;
 ---
 
-<div class="flex justify-center items-center mt-10 space-x-4">  <!-- Left Button -->
+<div class="flex justify-center items-center mt-10 space-x-4">
+  <!-- Left Button -->
   <button
     class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition"
     aria-label="Scroll left"
@@ -37,10 +38,10 @@ const { trackId = "testimonial-track" } = Astro.props;
         const trackId = button.dataset.track;
         const container = document.getElementById(trackId);
         if (!container) return;
-        const cardWidth = 424;
+
+        const cardWidth = 424; // width + gap
         container.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
       });
     });
   });
 </script>
-
