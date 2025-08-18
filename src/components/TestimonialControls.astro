@@ -29,7 +29,6 @@ const { trackId = "testimonial-track" } = Astro.props;
 </div>
 
 <script is:inline>
-  // Run this safely on DOM ready
   document.addEventListener("DOMContentLoaded", () => {
     const buttons = document.querySelectorAll("button[data-track]");
     buttons.forEach(button => {
@@ -44,3 +43,4 @@ const { trackId = "testimonial-track" } = Astro.props;
     });
   });
 </script>
+
