@@ -1,22 +1,14 @@
 ---
+// Accept trackId as a prop
 const { trackId = "testimonial-track" } = Astro.props;
 ---
-<script is:inline>
-  function scrollTestimonials(trackId, direction) {
-    const container = document.getElementById(trackId);
-    if (!container) return;
-    const cardWidth = 424; // 400px + 24px gap
-    container.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
-  }
-  window.scrollTestimonials = scrollTestimonials;
-</script>
 
-<div class="flex justify-center items-center mt-10 space-x-4">
-  <!-- Left Button -->
+<div class="flex justify-center items-center mt-10 space-x-4">  <!-- Left Button -->
   <button
-    onclick={`scrollTestimonials("${trackId}", -1)`}
     class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition"
     aria-label="Scroll left"
+    data-direction="-1"
+    data-track={trackId}
   >
     <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
@@ -25,12 +17,30 @@ const { trackId = "testimonial-track" } = Astro.props;
 
   <!-- Right Button -->
   <button
-    onclick={`scrollTestimonials("${trackId}", 1)`}
     class="w-10 h-10 rounded-full bg-orange-400 text-white flex items-center justify-center hover:bg-orange-500 transition"
     aria-label="Scroll right"
+    data-direction="1"
+    data-track={trackId}
   >
     <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
     </svg>
   </button>
 </div>
+
+<script is:inline>
+  // Run this safely on DOM ready
+  document.addEventListener("DOMContentLoaded", () => {
+    const buttons = document.querySelectorAll("button[data-track]");
+    buttons.forEach(button => {
+      button.addEventListener("click", () => {
+        const direction = parseInt(button.dataset.direction);
+        const trackId = button.dataset.track;
+        const container = document.getElementById(trackId);
+        if (!container) return;
+        const cardWidth = 424;
+        container.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+      });
+    });
+  });
+</script>
