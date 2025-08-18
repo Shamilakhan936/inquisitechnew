@@ -36,34 +36,43 @@ const testimonials = [
   <p class="text-gray-600 mb-10">Trusted By Industry Leaders Worldwide</p>
 
   <div class="relative">
-    <div id="testimonial-track" class="flex gap-6 overflow-x-auto scroll-smooth scrollbar-hide">
-      {testimonials.map(t => (
-        <div
-          class="bg-white shadow-md border p-6 text-left flex flex-col justify-between shrink-0"
-          style="width: 400px; height: 216px; border-radius: 20px;"
-        >
-          <div class="flex items-center mb-4">
-            <img src={t.image.src} alt={t.name} class="w-12 h-12 rounded-full mr-4" />
-            <div>
-              <p class="font-semibold">{t.name}</p>
-              <p class="text-sm text-gray-500">{t.role}</p>
-            </div>
-            <div class="ml-auto flex">
-  {[...Array(t.stars)].map((_, i) => (
-    <svg
-      class="w-5 h-5 text-yellow-400"
-      fill="currentColor"
-      viewBox="0 0 20 20"
+    <div
+      id="testimonial-track"
+      class="flex gap-6 overflow-x-auto scroll-smooth scrollbar-hide"
     >
-      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.958a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.286 3.958c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.285-3.958a1 1 0 00-.364-1.118L2.075 9.385c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.958z" />
-    </svg>
-  ))}
+      {
+        testimonials.map((t) => (
+          <div
+            class="bg-white shadow-md border p-6 text-left flex flex-col justify-between shrink-0"
+            style="width: 400px; height: 216px; border-radius: 20px;"
+          >
+            <div class="flex items-center mb-4">
+              <img
+                src={t.image.src}
+                alt={t.name}
+                class="w-12 h-12 rounded-full mr-4"
+              />
+              <div>
+                <p class="font-semibold">{t.name}</p>
+                <p class="text-sm text-gray-500">{t.role}</p>
+              </div>
+              <div class="ml-auto flex">
+                {[...Array(t.stars)].map(() => (
+                  <svg
+                    class="w-5 h-5 text-yellow-400"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.958a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.286 3.958c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.285-3.958a1 1 0 00-.364-1.118L2.075 9.385c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.958z" />
+                  </svg>
+                ))}
+              </div>
             </div>
-          </div>
 
-          <p class="text-gray-700 text-sm">{t.text}</p>
-        </div>
-      ))}
+            <p class="text-gray-700 text-sm">{t.text}</p>
+          </div>
+        ))
+      }
     </div>
 
     <!-- Controls -->
@@ -73,8 +82,8 @@ const testimonials = [
 
 <style>
   #testimonial-track {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;     /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
   #testimonial-track::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera */
