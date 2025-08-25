@@ -1,0 +1,96 @@
+---
+const services = [
+  {
+    title: "Data Analytics & Intelligence",
+    image: "/Images/dataAnalytics.png",
+    icon: "/Images/frame1.png",
+    description: "Transform raw data into actionable insights with advanced analytics solutions that drive strategic decision-making across your organization.",
+    features: ["Predictive Analytics", "Statistical Modeling", "Machine Learning", "Real-Time Monitoring"],
+    price: "$15,000",
+    duration: "8-12 Weeks"
+  },
+  {
+    title: "Machine Learning",
+    image: "/Images/machineLearning.png",
+    icon: "/Images/frame2.png",
+    description: "Build robust, scalable data infrastructure that consolidates information from multiple sources into a unified, accessible repository.",
+    features: ["Cloud Migration", "ETL Pipelines", "Data Integration", "Performance Optimization"],
+    price: "$15,000",
+    duration: "8-12 Weeks"
+  },
+  {
+    title: "Custom Solutions",
+    image: "/Images/customSolutions.png",
+    icon: "/Images/frame3.png",
+    description: "Create intuitive, interactive dashboards that make complex data easily understandable for stakeholders at every level.",
+    features: ["Interactive Dashboards", "Custom Visualizations", "Mobile Responsive", "Real-Time Updates"],
+    price: "$15,000",
+    duration: "8-12 Weeks"
+  },
+  {
+    title: "Business Intelligence Strategy",
+    image: "/Images/businessIntelligence.png",
+    icon: "/Images/frame4.png",
+    description: "Develop comprehensive BI strategies that align with your business objectives and maximize return on data investments.",
+    features: ["Strategic Planning", "ROI Assessment", "Technology Selection", "Implementation Roadmap"],
+    price: "$15,000",
+    duration: "8-12 Weeks"
+  },
+  {
+    title: "Data Governance & Quality",
+    image: "/Images/dataGovernance.png",
+    icon: "/Images/frame5.png",
+    description: "Establish robust data governance frameworks that ensure data quality, security, and compliance across your organization.",
+    features: ["Data Quality Assessment", "Compliance Framework", "Security Protocols", "Governance Policies"],
+    price: "$15,000",
+    duration: "8-12 Weeks"
+  }
+];
+---
+
+<section class="container-xl bg-white py-16 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto text-center">
+    <h2 class="font-serif text-3xl font-bold text-gray-900 sm:text-4xl">Our Core Services</h2>
+    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+      We offer specialized business intelligence services designed to unlock the full potential of your data assets and drive measurable business outcomes.
+    </p>
+  </div>
+
+  <div class="mt-12 grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      services.map(service => (
+        <div class="bg-white rounded-lg shadow-md flex flex-col h-full">
+          <img src={service.image} alt={service.title} class="w-full h-52 object-cover" />
+
+          <div class="p-6 flex flex-col flex-1">
+            <div class="flex items-center mb-4">
+              <img src={service.icon} alt={`${service.title} icon`} class="w-[46px] h-[46px] mr-2" />
+              <h3 class="text-normal font-semibold font-inter text-gray-900 ">{service.title}</h3>
+            </div>
+
+            <p class="text-gray-600 text-sm mb-4 flex-grow">{service.description}</p>
+
+            <h4 class="text-sm font-semibold text-gray-900 mb-2">Key Features:</h4>
+            <ul class="list-disc list-inside text-sm text-gray-600 space-y-1 mb-4">
+              {
+                service.features.map(feature => (
+                  <li>{feature}</li>
+                ))
+              }
+            </ul>
+
+            <div class="mt-auto">
+              <div class="flex justify-between text-sm text-gray-600 mb-4">
+                <span>Starting at {service.price}</span>
+                <span>{service.duration}</span>
+              </div>
+              <a href="#" class="block text-center bg-[#FF9929] hover:bg-orange-600 text-white py-2 rounded-[10px] transition">
+                Learn More
+              </a>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
