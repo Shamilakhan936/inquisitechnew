@@ -1,0 +1,113 @@
+---
+import Session from "../../public/Images/Session.png";
+import Deep from "../../public/Images/forkdeep.png";
+import Briefing from "../../public/Images/breifcase.png";
+
+const consultations = [
+    {
+        title: "Free Strategy Session",
+        description:
+            "Perfect For Exploring How BI Can Benefit Your Business. We’ll Discuss Your Goals And Challenges.",
+        points: [
+            "Business Needs Assessment",
+            "Technology Recommendations",
+            "High-Level Roadmap",
+            "No Obligation Consultation",
+        ],
+        duration: "30 Minutes",
+        buttonText: "Schedule Deep Dive",
+        icon: Session,
+    },
+    {
+        title: "Technical Deep Dive",
+        description:
+            "Detailed Technical Discussion For IT Leaders And Data Teams About Implementation Approaches.",
+        points: [
+            "Architecture Planning",
+            "Integration Requirements",
+            "Security Considerations",
+            "Technical Roadmap",
+        ],
+        duration: "60 Minutes",
+        buttonText: "Schedule Deep Dive",
+        icon: Deep,
+    },
+    {
+        title: "Executive Briefing",
+        description:
+            "Strategic Overview For C-Level Executives Focused On ROI, Timelines, And Business Impact.",
+        points: [
+            "ROI Projections",
+            "Implementation Timeline",
+            "Success Metrics",
+            "Change Management",
+        ],
+        duration: "45 Minutes",
+        buttonText: "Book Executive Session",
+        icon: Briefing,
+    },
+];
+---
+
+<section class="w-full bg-white">
+    <div class="container-xl mx-auto px-[96px] text-center">
+        <!-- Heading -->
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Choose Your Consultation Type
+        </h2>
+        <p class="text-gray-600 mb-12 max-w-2xl mx-auto">
+            Not Sure Where To Start? We Offer Different Types Of Consultations
+            Tailored To Your Role And Needs. All Consultations Are Completely
+            Free With No Obligations.
+        </p>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+  {consultations.map((item) => (
+    <div class="flex flex-col text-start bg-white text-gray-800 rounded-2xl py-10 px-6 border-[1px] border-black transition hover:shadow-lg hover:bg-[#FF9929] hover:border-none hover:text-white group">
+      
+      {/* Icon + Title */}
+      <div class="flex items-center gap-4">
+        <div class="flex items-center justify-center p-[16px] rounded-full bg-black mb-4 transition-colors group-hover:bg-white">
+          <img
+            src={item.icon.src}
+            alt={item.title + ' icon'}
+            class="w-6 h-6 object-contain"
+          />
+        </div>
+        <h3 class="text-[24px] font-inter mb-2 transition-colors group-hover:text-white">
+          {item.title}
+        </h3>
+      </div>
+
+      {/* Description */}
+      <p class="text-[16px] mb-4 text-[#4B5563] transition-colors group-hover:text-white">
+        {item.description}
+      </p>
+
+      {/* Bullet Points */}
+      <ul class="list-disc px-6 mb-4 space-y-1 text-start transition-colors">
+        {item.points.map((point) => (
+          <li class="text-sm text-[#4B5563] transition-colors group-hover:text-white">
+            {point}
+          </li>
+        ))}
+      </ul>
+
+      {/* Duration */}
+      <p class="text-sm font-medium text-[#FF9929] text-center mb-4 transition-colors group-hover:text-white">
+        {item.duration}
+      </p>
+
+      {/* Button */}
+      <a
+        href="#"
+        class="block w-full text-[16px] font-inter text-center py-3 rounded-lg font-medium transition shadow-sm bg-[#FF9929] text-white hover:bg-gray-800 group-hover:bg-black group-hover:text-white"
+      >
+        {item.buttonText}
+      </a>
+    </div>
+  ))}
+</div>
+
+    </div>
+</section>
