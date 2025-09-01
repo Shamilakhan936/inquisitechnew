@@ -6,37 +6,92 @@ import img4 from "../../public/Images/blog4.png";
 import img5 from "../../public/Images/blog5.png";
 import authorImg from "../../public/Images/frank.png";
 
-const articles = [img1, img2, img3, img4, img5];
+const articles = [
+  {
+    imgtitle:"Data Warehousing",
+    image: img1,
+    title: "The Future Of Business Intelligence",
+    subtitle: "AI-Powered Analytics",
+    description:
+      "Learn the essential strategies and technologies for building scalable, efficient data warehouses that drive business success.",
+    authorName: "Sarah Johnson",
+    authorTitle: "CEO, TechCorp Solutions",
+    authorImage: authorImg,
+  },
+  {
+    imgtitle:"Visualization",
+    image: img2,
+    title: "The Future Of Business Intelligence",
+    subtitle: "AI-Powered Analytics",
+    description:
+      "Learn the essential strategies and technologies for building scalable, efficient data warehouses that drive business success.",
+    authorName: "Sarah Johnson",
+    authorTitle: "CEO, TechCorp Solutions",
+    authorImage: authorImg,
+  },
+  {
+    imgtitle:"Strategy",
+    image: img3,
+     title: "The Future Of Business Intelligence",
+    subtitle: "AI-Powered Analytics",
+    description:
+      "Learn the essential strategies and technologies for building scalable, efficient data warehouses that drive business success.",
+    authorName: "Sarah Johnson",
+    authorTitle: "CEO, TechCorp Solutions",
+    authorImage: authorImg,
+  },
+  {
+    imgtitle:"Self-Service BI",
+    image: img4,
+     title: "The Future Of Business Intelligence",
+    subtitle: "AI-Powered Analytics",
+    description:
+      "Learn the essential strategies and technologies for building scalable, efficient data warehouses that drive business success.",
+    authorName: "Sarah Johnson",
+    authorTitle: "CEO, TechCorp Solutions",
+    authorImage: authorImg,
+  },
+  {
+    imgtitle:"Data Governance",
+    image: img5,
+     title: "The Future Of Business Intelligence",
+    subtitle: "AI-Powered Analytics",
+    description:
+      "Learn the essential strategies and technologies for building scalable, efficient data warehouses that drive business success.",
+    authorName: "Sarah Johnson",
+    authorTitle: "CEO, TechCorp Solutions",
+    authorImage: authorImg,
+  },
+];
 ---
 
 <section class="container-xl">
-  <h2 style="font-family: sans-serif;" class="font-sans-serif text-3xl font-bold text-center mb-12 mt-16">Latest Articles</h2>
+  <h2 class="font-sans-serif text-3xl font-bold text-center mb-12 mt-16">Latest Articles</h2>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto mb-16">
-    {articles.map((image, index) => (
-      <div class="bg-white w-[400px] rounded-lg shadow-md overflow-hidden border border-gray-200 transition hover:shadow-lg">
-        <!-- Image -->
-        <img src={image.src} alt={`Article ${index + 1}`} class="w-full h-48 object-cover" />
+    {articles.map((article, index) => (
+      <div
+        class="bg-white w-[400px] relative shadow-md overflow-hidden border border-gray-200 transition hover:shadow-lg"
+      >
+        <h4 class=" absolute left-6 top-6 px-4 py-2 bg-white rounded-lg text-[14px] m-0 font-inter">
+          {article.imgtitle}
+        </h4>
+        <img src={article.image.src} alt={`Article ${index + 1}`} class="w-full h-48 object-cover" />
 
-        <!-- Content -->
-        <div class="p-5 flex flex-col justify-between w-full">
+        <div class="px-6 pt-6 pb-20 flex flex-col justify-between w-full">
           <h3 class="font-bold text-lg mb-2 leading-snug">
-            The Future Of Business Intelligence <br />
-            AI-Powered Analytics
+            {article.title} <br />
+            {article.subtitle}
           </h3>
 
-          <p class="text-sm text-gray-600 mb-4">
-            Learn the essential strategies and technologies for building scalable, efficient
-            data warehouses that drive business success.
-          </p>
+          <p class="text-sm text-gray-600 mb-4">{article.description}</p>
 
-          <!-- Footer -->
           <div class="flex justify-between items-center mt-auto w-full my-6">
             <div class="flex items-center gap-3">
-              <img src={authorImg.src} alt="Author" class="w-[47.99px] h-[47.99px] rounded-full" />
+              <img src={article.authorImage.src} alt="Author" class="w-[47.99px] h-[47.99px] rounded-full" />
               <div>
-                <p class="text-sm font-inter">Sarah Johnson</p>
-                <p class="text-xs text-black">CEO, TechCorp Solutions</p>
+                <p class="text-sm font-inter">{article.authorName}</p>
+                <p class="text-xs text-black">{article.authorTitle}</p>
               </div>
             </div>
             <a
