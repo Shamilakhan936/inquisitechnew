@@ -4,11 +4,15 @@ import img2 from "../../public/Images/blog2.png";
 import img3 from "../../public/Images/blog3.png";
 import img4 from "../../public/Images/blog4.png";
 import img5 from "../../public/Images/blog5.png";
-import authorImg from "../../public/Images/frank.png";
+import authorImg1 from "../../public/Images/latestArticleAvatar1.png";
+import authorImg2 from "../../public/Images/latestArticleAvatar2.png";
+import authorImg3 from "../../public/Images/latestArticleAvatar3.png";
+import authorImg4 from "../../public/Images/latestArticleAvatar4.png";
+import authorImg5 from "../../public/Images/latestArticleAvatar5.png";
 
 const articles = [
   {
-    imgtitle:"Data Warehousing",
+    imgtitle: "Data Warehousing",
     image: img1,
     title: "The Future Of Business Intelligence",
     subtitle: "AI-Powered Analytics",
@@ -16,10 +20,10 @@ const articles = [
       "Learn the essential strategies and technologies for building scalable, efficient data warehouses that drive business success.",
     authorName: "Sarah Johnson",
     authorTitle: "CEO, TechCorp Solutions",
-    authorImage: authorImg,
+    authorImage: authorImg1,
   },
   {
-    imgtitle:"Visualization",
+    imgtitle: "Visualization",
     image: img2,
     title: "The Future Of Business Intelligence",
     subtitle: "AI-Powered Analytics",
@@ -27,82 +31,105 @@ const articles = [
       "Learn the essential strategies and technologies for building scalable, efficient data warehouses that drive business success.",
     authorName: "Sarah Johnson",
     authorTitle: "CEO, TechCorp Solutions",
-    authorImage: authorImg,
+    authorImage: authorImg2,
   },
   {
-    imgtitle:"Strategy",
+    imgtitle: "Strategy",
     image: img3,
-     title: "The Future Of Business Intelligence",
+    title: "The Future Of Business Intelligence",
     subtitle: "AI-Powered Analytics",
     description:
       "Learn the essential strategies and technologies for building scalable, efficient data warehouses that drive business success.",
     authorName: "Sarah Johnson",
     authorTitle: "CEO, TechCorp Solutions",
-    authorImage: authorImg,
+    authorImage: authorImg3,
   },
   {
-    imgtitle:"Self-Service BI",
+    imgtitle: "Self-Service BI",
     image: img4,
-     title: "The Future Of Business Intelligence",
+    title: "The Future Of Business Intelligence",
     subtitle: "AI-Powered Analytics",
     description:
       "Learn the essential strategies and technologies for building scalable, efficient data warehouses that drive business success.",
     authorName: "Sarah Johnson",
     authorTitle: "CEO, TechCorp Solutions",
-    authorImage: authorImg,
+    authorImage: authorImg4,
   },
   {
-    imgtitle:"Data Governance",
+    imgtitle: "Data Governance",
     image: img5,
-     title: "The Future Of Business Intelligence",
+    title: "The Future Of Business Intelligence",
     subtitle: "AI-Powered Analytics",
     description:
       "Learn the essential strategies and technologies for building scalable, efficient data warehouses that drive business success.",
     authorName: "Sarah Johnson",
     authorTitle: "CEO, TechCorp Solutions",
-    authorImage: authorImg,
+    authorImage: authorImg5,
+  },
+  {
+    imgtitle: "Data Governance",
+    image: img5,
+    title: "The Future Of Business Intelligence",
+    subtitle: "AI-Powered Analytics",
+    description:
+      "Learn the essential strategies and technologies for building scalable, efficient data warehouses that drive business success.",
+    authorName: "Sarah Johnson",
+    authorTitle: "CEO, TechCorp Solutions",
+    authorImage: authorImg5,
   },
 ];
 ---
 
 <section class="container-xl">
-  <h2 class="font-sans-serif text-3xl font-bold text-center mb-12 mt-16">Latest Articles</h2>
+  <h2 class="font-sans-serif text-3xl font-bold text-center mb-12 mt-16">
+    Latest Articles
+  </h2>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto mb-16">
-    {articles.map((article, index) => (
-      <div
-        class="bg-white w-[400px] relative shadow-md overflow-hidden border border-gray-200 transition hover:shadow-lg"
-      >
-        <h4 class=" absolute left-6 top-6 px-4 py-2 bg-white rounded-lg text-[14px] m-0 font-inter">
-          {article.imgtitle}
-        </h4>
-        <img src={article.image.src} alt={`Article ${index + 1}`} class="w-full h-56 object-cover" />
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto mb-16"
+  >
+    {
+      articles.map((article, index) => (
+        <div class="bg-white w-[400px] relative shadow-md overflow-hidden border border-gray-200 transition hover:shadow-lg">
+          <h4 class=" absolute left-6 top-6 px-4 py-2 bg-white rounded-lg text-[14px] m-0 font-inter">
+            {article.imgtitle}
+          </h4>
+          <img
+            src={article.image.src}
+            alt={`Article ${index + 1}`}
+            class="w-full h-56 object-cover"
+          />
 
-        <div class="px-6 pt-6 pb-20 flex flex-col justify-between w-full">
-          <h3 class="font-bold text-lg mb-2 leading-snug">
-            {article.title} <br />
-            {article.subtitle}
-          </h3>
+          <div class="px-6 pt-6 pb-20 flex flex-col justify-between w-full">
+            <h3 class="font-bold text-lg mb-2 leading-snug">
+              {article.title} <br />
+              {article.subtitle}
+            </h3>
 
-          <p class="text-sm text-gray-600 mb-4">{article.description}</p>
+            <p class="text-sm text-gray-600 mb-4">{article.description}</p>
 
-          <div class="flex justify-between items-center mt-auto w-full my-6">
-            <div class="flex items-center gap-3">
-              <img src={article.authorImage.src} alt="Author" class="w-[47.99px] h-[47.99px] rounded-full" />
-              <div>
-                <p class="text-sm font-inter">{article.authorName}</p>
-                <p class="text-xs text-black">{article.authorTitle}</p>
+            <div class="flex justify-between items-center mt-auto w-full my-6">
+              <div class="flex items-center gap-3">
+                <img
+                  src={article.authorImage.src}
+                  alt="Author"
+                  class="w-[47.99px] h-[47.99px] rounded-full"
+                />
+                <div>
+                  <p class="text-sm font-inter">{article.authorName}</p>
+                  <p class="text-xs text-black">{article.authorTitle}</p>
+                </div>
               </div>
+              <a
+                href="#"
+                class="text-orange-500 hover:text-orange-600 font-medium text-sm flex self-end gap-1"
+              >
+                Learn More →
+              </a>
             </div>
-            <a
-              href="#"
-              class="text-orange-500 hover:text-orange-600 font-medium text-sm flex self-end gap-1"
-            >
-              Learn More →
-            </a>
           </div>
         </div>
-      </div>
-    ))}
+      ))
+    }
   </div>
 </section>
